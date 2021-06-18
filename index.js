@@ -137,6 +137,7 @@ app.get("/jobs",async(req,res)=>{
         const db =client.db("jobseeker");
         const data =await db.collection("jobs").find().toArray();
         res.status(200).json(data);
+        client.close();
         }catch(err){
             console.log(err)
         }
