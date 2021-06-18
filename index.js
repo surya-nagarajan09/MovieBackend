@@ -129,7 +129,7 @@ app.post("/create_job",async(req,res)=>{
 
 // get all job
 
-app.get("/all",(req,res)=>{
+app.get("/all",async(req,res)=>{
     const client= await mongoClient.connect(db_url);
     if(client){
         const db = client.db("jobseeker");
